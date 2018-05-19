@@ -16,15 +16,13 @@ $(document).ready(function(){
     
     $('#search-button').click(function(){
 
-        console.log("Search start")
         q = $('#search-term').val().trim();
         console.log(q);
         number_records = $('#dropdown').val().trim();
         console.log(number_records);
         begin_date =  $('#start-year').val().trim();
-        console.log(begin_date);
         end_date = $('#end-year').val().trim();
-        console.log(end_date);
+        
         if (begin_date === ""){
             begin_date = "20000101";
         }
@@ -38,8 +36,7 @@ $(document).ready(function(){
           'end_date': end_date,
           'sort': "newest"
         });
-        console.log(url);
-        //https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=54da3f0b1be344a49b897ea0d8cc7250&q=trump&begin_date=&end_date=
+
         $.ajax({
           url: url,
           method: 'GET',
