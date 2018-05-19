@@ -19,7 +19,7 @@ $(document).ready(function(){
         console.log("Search start")
         q = $('#search-term').val().trim();
         console.log(q);
-        number_records = $('#records').val().trim();
+        number_records = $('#dropdown').val().trim();
         console.log(number_records);
         begin_date =  $('#start-year').val().trim();
         console.log(begin_date);
@@ -51,6 +51,23 @@ $(document).ready(function(){
           console.log(doc[0].byline.original);
           console.log(doc[0].pub_date);
           console.log(doc[0].web_url);
+          for(let i = 0; i<number_records; i++){
+              var newHeader = $('<h5 class="card-title">');
+              var newP1 = $('<p class="card-text">');
+              var newP2 = $('<p class="card-text">');
+              var newP3 = $('<a class="card-text">');
+              newHeader.text(doc[i].headline.main);
+              newP1.text(doc[i].byline.original);
+              newP2.text(doc[i].pub_date);
+              newP3.attr("href", doc[i].web_url);
+              newP3.text(doc[i].web_url);
+              $("#top-articles .card-body").append(newHeader);
+              $("#top-articles .card-body").append(newP1);
+              $("#top-articles .card-body").append(newP2);
+              $("#top-articles .card-body").append(newP3);
+
+        }
+
         }).fail(function(err) {
           throw err;
         });
