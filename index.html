@@ -7,6 +7,7 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 <body>
     <div class="container">
@@ -15,19 +16,28 @@
         <div class="row">
 
             <div class="col jumbotron text-center bg-dark text-white">
-                <h1 id="header">NY Times Search</h1>
+                    <h1 id="header"> <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/105933-200.png" style= "height:80px ; width:'80px'" class= "text-white"> NY Times Search </h1>
+                <!-- <h1 id="header">NY Times Search</h1>-->
             </div>
         </div>
         <!-- Search Parameters Section -->
         <div id= "search_parameters" class="row">
             <div class="col card">
                 <div class="card-header">
-                    <h2>Search Parameters</h2>
+                    <h2><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/43533-200.png" style= "height:40px ; width:'40px'" class= "text-white"> Search Parameters</h2>
                 </div>
                 <div class="card-body">
                         <p>Search Term: <br><input type="text" size="100" id="search-term"></p>
 
-                        <p>Number of records to retrieve: <br><input type="text" size="100" id="records"></p>
+                        <p>Number of records to retrieve: <br>
+                            
+                            <select name="drop-down" id="dropdown">
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    
+                            </select>
+                        </p>
                 
                         <p>Start Year (optional): <br><input type="text" size="100" id="start-year"></p>
                 
@@ -44,7 +54,7 @@
         <div id= "top-articles" class="row">
                 <div class="col card">
                     <div class="card-header">
-                        <h2>Top Articles</h2>
+                        <h2><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/101509-200.png" style= "height:40px ; width:'40px'" class= "text-white"> Top Articles</h2>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"></h5>
@@ -61,6 +71,7 @@
     </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script type = "text/javascript" src="nytimes.js"></script>
     
