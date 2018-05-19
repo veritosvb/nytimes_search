@@ -1,0 +1,10 @@
+#dropdown, #search-term, #start-year, #end-year{
+
+    width:100%;
+}
+
+body {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+}
