@@ -41,10 +41,11 @@ $(document).ready(function(){
           url: url,
           method: 'GET',
         }).then(function(result) {
+
           var doc = result.response.docs;
+          var newDiv = $('<div class="card-body">');
 
           for(let i = 0; i<number_records; i++){
-              var newDiv = $('<div class="card-body">');
               var newNumber = $('<p>');
               var newHeader = $('<h5 class="card-title ">');
               var newP1 = $('<p class="card-text">');
@@ -61,10 +62,12 @@ $(document).ready(function(){
               newDiv.append(newP3);
               $('#top-articles .card-news').append(newDiv);
 
-
         }
 
         }).fail(function(err) {
+            var newDiv = $('<div class="card-body">');
+            newDiv.text("No records found");
+            $('#top-articles .card-news').append(newDiv);
           throw err;
         });
 
