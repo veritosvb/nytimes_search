@@ -1,7 +1,6 @@
-var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-var q = "trump";
-var begin_date = "20180501";
-var end_date = "20180519";
+var q;
+var begin_date = "";
+var end_date = "";
 var number_records;
 
 
@@ -10,12 +9,13 @@ $(document).ready(function(){
     
     $('#clear-button').click(function(){
         //Clearing 
-        $('#top-articles .card-body').empty();
+        $('#top-articles .card-news').empty();
         console.log("All clear Chief!");
     });
     
     $('#search-button').click(function(){
-
+        $('#top-articles .card-news').empty();
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         q = $('#search-term').val().trim();
         console.log(q);
         number_records = $('#dropdown').val().trim();
@@ -42,26 +42,26 @@ $(document).ready(function(){
           method: 'GET',
         }).then(function(result) {
           var doc = result.response.docs;
-          console.log(result);
-          console.log(doc[0]);
-          console.log(doc[0].headline.main);
-          console.log(doc[0].byline.original);
-          console.log(doc[0].pub_date);
-          console.log(doc[0].web_url);
+
           for(let i = 0; i<number_records; i++){
+              var newDiv = $('<div class="card-body">');
+        
               var newHeader = $('<h5 class="card-title">');
               var newP1 = $('<p class="card-text">');
               var newP2 = $('<p class="card-text">');
               var newP3 = $('<a class="card-text">');
-              newHeader.text(doc[i].headline.main);
+              newHeader.text((i + 1)+ " " + doc[i].headline.main);
+             // newDiv.prepend(number);
               newP1.text(doc[i].byline.original);
               newP2.text(doc[i].pub_date);
               newP3.attr("href", doc[i].web_url);
               newP3.text(doc[i].web_url);
-              $("#top-articles .card-body").append(newHeader);
-              $("#top-articles .card-body").append(newP1);
-              $("#top-articles .card-body").append(newP2);
-              $("#top-articles .card-body").append(newP3);
+              newDiv.append(newHeader);
+              newDiv.append(newP1);
+              newDiv.append(newP2);
+              newDiv.append(newP3);
+              $('#top-articles .card-news').append(newDiv);
+
 
         }
 

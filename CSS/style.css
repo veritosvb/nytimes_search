@@ -8,3 +8,13 @@ body {
     font-size: 15px;
     line-height: 1.42857143;
 }
+
+#top-articles .card-body{
+    border: 1px solid rgba(128, 128, 128, 0.678);
+}
+
+#top-articles h5::first-letter { 
+    font-size: 100%;
+    background-color:grey;
+    color:white;
+}
