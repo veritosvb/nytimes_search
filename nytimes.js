@@ -45,13 +45,12 @@ $(document).ready(function(){
 
           for(let i = 0; i<number_records; i++){
               var newDiv = $('<div class="card-body">');
-        
-              var newHeader = $('<h5 class="card-title">');
+              var newNumber = $('<p>');
+              var newHeader = $('<h5 class="card-title ">');
               var newP1 = $('<p class="card-text">');
               var newP2 = $('<p class="card-text">');
               var newP3 = $('<a class="card-text">');
               newHeader.text((i + 1)+ " " + doc[i].headline.main);
-             // newDiv.prepend(number);
               newP1.text(doc[i].byline.original);
               newP2.text(doc[i].pub_date);
               newP3.attr("href", doc[i].web_url);
